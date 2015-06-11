@@ -7,8 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "FloatingButton.h"
+#import "FloatingMenuController.h"
 
 @interface ViewController ()
+
+@property (weak, nonatomic) IBOutlet FloatingButton *addButton;
 
 @end
 
@@ -23,5 +27,11 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (IBAction)presentFloatingView:(id)sender {
+    FloatingMenuController *destinationController = [[FloatingMenuController alloc]initWithUIView:self.view];
+    [self presentViewController:destinationController animated:YES completion:nil];
+}
+
 
 @end
